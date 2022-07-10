@@ -1,0 +1,31 @@
+function [out] = visualiza_modelagem(h,t,G11,G22)
+    %% Visualizando Dados 
+    [h1_modelo] = 3.3944*step(G11,t) +25.0699;
+    figure('Name','Dados Tanque Filtrado')
+    subplot(2,1,1);
+    hold on
+    grid on
+    plot(t,h(1,:))
+    plot(t,h(1,:))
+    title('Nível')
+    xlabel('tempo [s]')
+    ylabel('Altura [cm]')
+    
+    
+    [h2_modelo] = 3.3541*step(G22,t) +20.1173;
+    
+    
+    
+    
+    legend('h1','Location','Northeast');
+    subplot(2,1,2);
+    hold on
+    grid on
+    plot(t,h(2,:))
+    title('Nível')
+    xlabel('tempo [s]')
+    ylabel('Altura [cm]')
+    legend('h2','Location','Northeast');
+
+
+end
